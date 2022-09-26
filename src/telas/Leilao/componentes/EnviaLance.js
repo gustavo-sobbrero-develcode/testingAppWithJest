@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, TouchableOpacity, StyleSheet, Platform } from 'react-native';
-import { BlurView } from 'expo-blur';
+import { Text, TextInput, TouchableOpacity, StyleSheet, View } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
 import { ENVIADO } from '../../../negocio/constantes/estadosLance';
 
@@ -29,24 +28,25 @@ export default function EnviaLance({ enviaLance, cor }) {
     setEnviando(false);
   }
 
-  return <BlurView intensity={Platform.OS === 'ios' ? 10 : 100} style={estilos.fundo} tint="light">
+  return <View style={estilos.fundo}>
     {!!erro && <Text style={estilos.erro}>{erro}</Text>}
     {!!sucesso && <Text style={estilos.sucesso}>{sucesso}</Text>}
-    <TextInput 
-      value={valor} 
+    <TextInput
+      value={valor}
       onChangeText={setValor}
       placeholder="R$"
       editable={!enviando}
       style={estilos.entrada}
       keyboardType="decimal-pad"
     />
-    <TouchableOpacity 
+    <TouchableOpacity
+      accessibilityHint='Enviar lance'
       onPress={validaEnvio}
       disabled={enviando}
       style={estilos.botao}>
       <FontAwesome5 name="check" size={24} color="#14181B" />
     </TouchableOpacity>
-  </BlurView>
+  </View>
 }
 
 const funcaoEstilos = (cor, erro) => StyleSheet.create({

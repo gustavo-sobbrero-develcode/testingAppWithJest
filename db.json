@@ -77,6 +77,31 @@
       "valor": 800.02,
       "leilaoId": 3,
       "id": 4
+    },
+    {
+      "valor": 1000.02,
+      "leilaoId": 1,
+      "id": 5
+    },
+    {
+      "valor": 12312331213,
+      "leilaoId": 4,
+      "id": 6
+    },
+    {
+      "valor": 5000000,
+      "leilaoId": 7,
+      "id": 7
+    },
+    {
+      "valor": 40000000,
+      "leilaoId": 7,
+      "id": 8
+    },
+    {
+      "valor": 1243243,
+      "leilaoId": 5,
+      "id": 9
     }
   ]
 }
